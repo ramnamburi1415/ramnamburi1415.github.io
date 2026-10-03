@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ram Namburi | Backend Software Engineer</title>
+<meta name="description" content="Ram Namburi is a backend software engineer building Java, Spring Boot and Kafka systems on AWS, with production AI and RAG experience. Open to roles across the US.">
+<meta property="og:title" content="Ram Namburi | Backend Software Engineer">
+<meta property="og:description" content="Java, Spring Boot, Kafka and AWS. Claims platform handling about 2 million healthcare transactions a day.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f3d3e'/%3E%3Ctext x='32' y='43' font-family='Georgia,serif' font-size='30' font-weight='700' text-anchor='middle' fill='%23f4efe6'%3ERN%3C/text%3E%3C/svg%3E">
+<style>
+:root{
+  --bg:#f4efe6; --surface:#fbf8f2; --ink:#16201f; --muted:#56605e; --line:#d9d1c2;
+  --accent:#0f3d3e; --accent-ink:#f4efe6; --hi:#b8552b; --chip:#e9e2d3;
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root{--bg:#101615; --surface:#161e1d; --ink:#ece6da; --muted:#9aa5a2; --line:#2a3533;
+        --accent:#8fd0c0; --accent-ink:#0c1413; --hi:#e59a6f; --chip:#1e2927;}
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+header.nav{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:16px}
+.brand{font-family:var(--serif);font-weight:700;font-size:20px;text-decoration:none;letter-spacing:.2px}
+.nav nav{display:flex;gap:22px;font-size:15px}
+.nav nav a{text-decoration:none;color:var(--muted)}
+.nav nav a:hover{color:var(--ink)}
+.btn{display:inline-block;padding:11px 20px;border-radius:999px;text-decoration:none;font-weight:600;font-size:15px;border:1.5px solid var(--accent);transition:transform .15s}
+.btn:hover{transform:translateY(-1px)}
+.btn.solid{background:var(--accent);color:var(--accent-ink)}
+.btn.ghost{color:var(--accent)}
+.hero{padding:88px 0 56px}
+.eyebrow{font-family:var(--mono);font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--hi);margin:0 0 18px}
+h1{font-family:var(--serif);font-size:clamp(38px,6.4vw,68px);line-height:1.05;margin:0 0 22px;letter-spacing:-.01em;text-wrap:balance}
+h1 em{font-style:italic;color:var(--accent)}
+.lead{font-size:clamp(18px,2.1vw,21px);color:var(--muted);max-width:680px;margin:0 0 32px}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:56px}
+.stat{padding:24px 18px 22px 0}
+.stat+.stat{padding-left:22px;border-left:1px solid var(--line)}
+.stat b{display:block;font-family:var(--serif);font-size:clamp(28px,3.6vw,40px);line-height:1.1;color:var(--accent)}
+.stat span{font-size:14px;color:var(--muted)}
+section{padding:72px 0 8px}
+h2{font-family:var(--serif);font-size:clamp(26px,3.4vw,36px);margin:0 0 8px;letter-spacing:-.005em}
+.sub{color:var(--muted);margin:0 0 34px;max-width:640px}
+.job{display:grid;grid-template-columns:190px 1fr;gap:28px;padding:28px 0;border-top:1px solid var(--line)}
+.job .when{font-family:var(--mono);font-size:13px;color:var(--muted);padding-top:5px}
+.job h3{margin:0;font-size:20px}
+.job .org{color:var(--muted);margin:2px 0 12px;font-size:15.5px}
+.job ul{margin:0;padding-left:19px}
+.job li{margin:6px 0}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:26px}
+.card h3{margin:0 0 6px;font-size:19px}
+.card p{margin:0 0 14px;color:var(--muted);font-size:15.5px}
+.tags{display:flex;flex-wrap:wrap;gap:7px;margin:0;padding:0;list-style:none}
+.tags li{font-family:var(--mono);font-size:12.5px;background:var(--chip);padding:4px 10px;border-radius:999px}
+.card.feature{grid-column:1/-1;display:grid;grid-template-columns:1.2fr 1fr;gap:30px;align-items:center}
+.flow{font-family:var(--mono);font-size:13px;display:grid;gap:8px}
+.flow div{border:1px solid var(--line);border-radius:10px;padding:10px 14px;background:var(--bg)}
+.flow div b{color:var(--hi);font-weight:600}
+.flow .arrow{border:0;background:none;padding:0 14px;color:var(--muted)}
+.skills{display:grid;grid-template-columns:170px 1fr;gap:14px 28px;border-top:1px solid var(--line);padding-top:24px}
+.skills dt{font-family:var(--mono);font-size:13px;color:var(--muted);padding-top:3px}
+.skills dd{margin:0}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.contact{margin:88px 0 0;background:var(--accent);color:var(--accent-ink);border-radius:24px;padding:56px 44px}
+.contact h2{font-size:clamp(28px,4vw,44px);margin-bottom:12px}
+.contact p{max-width:560px;margin:0 0 28px;opacity:.85}
+.contact .links{display:flex;flex-wrap:wrap;gap:12px}
+.contact .btn{border-color:var(--accent-ink);color:var(--accent-ink)}
+.contact .btn.solid{background:var(--accent-ink);color:var(--accent)}
+footer{padding:36px 0 48px;color:var(--muted);font-size:14px;text-align:center}
+@media (max-width:760px){
+  .nav nav{display:none}
+  .hero{padding:56px 0 40px}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .stat:nth-child(3){padding-left:0;border-left:0}
+  .stat:nth-child(n+3){border-top:1px solid var(--line)}
+  .job{grid-template-columns:1fr;gap:6px}
+  .grid,.two,.card.feature{grid-template-columns:1fr}
+  .skills{grid-template-columns:1fr;gap:4px}
+  .skills dd{margin-bottom:14px}
+  .contact{padding:40px 24px;border-radius:18px}
+}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top">Ram Namburi</a>
+    <nav>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="btn solid" href="Ram_Namburi_Resume.pdf" download>Resume</a>
+  </div>
+</header>
+
+<main id="top">
+  <div class="wrap">
+
+    <div class="hero">
+      <p class="eyebrow">Backend software engineer · Dallas Fort Worth · Open to relocation</p>
+      <h1>I build backend systems that stay up when <em>2 million claims a day</em> run through them.</h1>
+      <p class="lead">Three years of Java, Spring Boot and Kafka on AWS, most recently on the healthcare claims platform at Optum. I also ship AI features: retrieval, agents and LLM services that run in production.</p>
+      <div class="cta">
+        <a class="btn solid" href="mailto:namburiram77@gmail.com">Email me</a>
+        <a class="btn ghost" href="Ram_Namburi_Resume.pdf" download>Download resume</a>
+        <a class="btn ghost" href="https://www.linkedin.com/in/ramnamburi1415" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+
+      <div class="stats">
+        <div class="stat"><b>2M</b><span>healthcare transactions a day on the platform I work on</span></div>
+        <div class="stat"><b>38%</b><span>faster average API response after caching and query tuning</span></div>
+        <div class="stat"><b>6</b><span>downstream systems kept in sync through Kafka pipelines</span></div>
+        <div class="stat"><b>80%</b><span>less monthly HR effort after a payroll platform launch</span></div>
+      </div>
+    </div>
+
+    <section id="experience">
+      <h2>Experience</h2>
+      <p class="sub">Regulated, high volume systems where a duplicate or lost event costs real money.</p>
+
+      <div class="job">
+        <div class="when">Jan 2026 to present</div>
+        <div>
+          <h3>Full Stack Software Engineer</h3>
+          <p class="org">Optum, UnitedHealth Group</p>
+          <ul>
+            <li>Built and maintained Java and Spring Boot microservices for a claims platform processing about 2 million healthcare transactions a day.</li>
+            <li>Cut average API response time by 38% with response caching, connection pooling and query tuning.</li>
+            <li>Designed Kafka pipelines that sync eligibility and benefits data across six downstream systems, with idempotent consumers so retries never duplicate or drop a claim event.</li>
+            <li>Implemented OAuth 2.0, JWT and role based access control for HIPAA and SOC 2; contributed to an audit with no critical findings.</li>
+            <li>Integrated a Python FastAPI NLP service that triages clinical reviews automatically.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="job">
+        <div class="when">Apr 2025 to Dec 2025</div>
+        <div>
+          <h3>Full Stack Software Engineer Co-op</h3>
+          <p class="org">Optum, UnitedHealth Group</p>
+          <ul>
+            <li>Moved legacy monolithic claims services into containerized microservices on AWS ECS Fargate.</li>
+            <li>Replaced a manual deployment that took hours with a Jenkins pipeline that takes minutes.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="job">
+        <div class="when">Jan 2023 to Dec 2023</div>
+        <div>
+          <h3>Software Developer</h3>
+          <p class="org">Aryagami Cloud Services</p>
+          <ul>
+            <li>Built and launched an HR and payroll platform of four independently deployable Spring Boot microservices, cutting monthly HR effort by more than 80%.</li>
+            <li>Designed Kafka event flows partitioned by employee to preserve ordering, with Redis idempotency checks to prevent duplicate payslips.</li>
+            <li>Added Resilience4j circuit breakers, retries and fallbacks so the platform degrades gracefully when a dependency fails.</li>
+            <li>Delivered Jenkins pipelines with Testcontainers tests and rolling ECS Fargate deployments with health check rollback.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <p class="sub">Things I designed and built end to end.</p>
+
+      <div class="grid">
+        <div class="card feature">
+          <div>
+            <h3>AI Research Agent</h3>
+            <p>An agentic RAG application that decides, per question, whether to answer from a vector store or from live web search, and grounds every answer in cited sources. Streams tokens as they are generated and returns retrieval results in under 200 ms.</p>
+            <ul class="tags"><li>Python</li><li>LangGraph</li><li>FastAPI</li><li>ChromaDB</li><li>Redis</li><li>Airflow</li><li>Prometheus</li><li>Docker</li></ul>
+          </div>
+          <div class="flow" aria-label="How the agent routes a question">
+            <div><b>01</b> Question arrives</div>
+            <div><b>02</b> Router picks: vector retrieval or web search</div>
+            <div><b>03</b> Sources fetched and ranked</div>
+            <div><b>04</b> Answer streamed with citations</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>HR and Payroll Microservices Platform</h3>
+          <p>Event driven platform with isolated data stores per service, Kafka messaging, Redis idempotency and fault handling, deployed with zero downtime.</p>
+          <ul class="tags"><li>Java</li><li>Spring Boot</li><li>Kafka</li><li>PostgreSQL</li><li>AWS ECS</li></ul>
+        </div>
+
+        <div class="card">
+          <h3>Product Review Summarization</h3>
+          <p>NLP pipeline that summarizes product reviews at scale on AWS, with a Random Forest sentiment model. Cut processing time by 25%.</p>
+          <ul class="tags"><li>Python</li><li>NLTK</li><li>scikit-learn</li><li>AWS</li></ul>
+        </div>
+
+        <div class="card">
+          <h3>Vehicle Service Management System</h3>
+          <p>SQL backend for concurrent vehicle maintenance workflows. Indexing and query work improved retrieval by 15% under simulated load.</p>
+          <ul class="tags"><li>Python</li><li>SQL</li><li>C++</li></ul>
+        </div>
+
+        <div class="card">
+          <h3>Published research</h3>
+          <p>Machine Learning Techniques for Software Defect Prediction, published in the International Research Journal of Engineering and Technology.</p>
+          <ul class="tags"><li>Machine learning</li><li>Software reliability</li></ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <p class="sub">What I use day to day.</p>
+      <dl class="skills">
+        <dt>Languages</dt><dd>Java, Python, SQL, JavaScript</dd>
+        <dt>Backend</dt><dd>Spring Boot, Spring Cloud, Spring Security, FastAPI, REST APIs, JUnit 5, Testcontainers</dd>
+        <dt>Distributed systems</dt><dd>Apache Kafka, microservices, event driven architecture, idempotency, retries, circuit breakers</dd>
+        <dt>Cloud and DevOps</dt><dd>AWS (ECS Fargate, Lambda, RDS, DynamoDB, S3, CloudWatch), Docker, Kubernetes, Jenkins, Terraform</dd>
+        <dt>Data</dt><dd>PostgreSQL, MySQL, MongoDB, Redis, DynamoDB, Flyway</dd>
+        <dt>AI</dt><dd>LangGraph, LangChain, RAG, LLM integration, embeddings, ChromaDB, Pinecone</dd>
+        <dt>Frontend</dt><dd>Angular</dd>
+      </dl>
+    </section>
+
+    <section id="education">
+      <h2>Education</h2>
+      <p class="sub"></p>
+      <div class="two">
+        <div class="card">
+          <h3>University of North Texas</h3>
+          <p>Master of Information Science. Coursework in advanced software engineering, distributed systems and cloud computing. Thesis on predictive software maintenance using machine learning.</p>
+        </div>
+        <div class="card">
+          <h3>GITAM Institute of Technology</h3>
+          <p>B.Tech in Computer Science Engineering. Capstone: a real time traffic monitoring system using Java and IoT sensors.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="contact" id="contact">
+      <h2>Hiring a backend engineer?</h2>
+      <p>I am looking for a full time backend or full stack role anywhere in the US.</p>
+      <div class="links">
+        <a class="btn solid" href="mailto:namburiram77@gmail.com">namburiram77@gmail.com</a>
+        <a class="btn" href="tel:+19452016754">+1 (945) 201 6754</a>
+        <a class="btn" href="https://www.linkedin.com/in/ramnamburi1415" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn" href="https://github.com/ramnamburi1415" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn" href="Ram_Namburi_Resume.pdf" download>Resume PDF</a>
+      </div>
+    </div>
+
+    <footer>© 2026 Ram Namburi · Lewisville, Texas</footer>
+  </div>
+</main>
+</body>
+</html>
